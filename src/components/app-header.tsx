@@ -5,7 +5,7 @@ import { Bell, Plus, Search, Settings } from "lucide-react";
 
 const AppHeader = () => {
   return (
-    <div className="flex items-center justify-between h-12 border-b w-full px-2">
+    <div className="flex items-center sticky top-0 justify-between z-10 bg-white h-12 border-b w-full px-2">
       <div className="flex items-center gap-1">
         <SidebarTrigger />
         <h2 className="text-sm">Cleanbox.</h2>
@@ -23,7 +23,7 @@ const AppHeader = () => {
         </Button>
         <Button>
           <Plus />
-          Create Email
+          Create New
         </Button>
       </div>
     </div>

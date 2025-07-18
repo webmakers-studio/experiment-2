@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`${fontSans.variable} font-sans antialiased`}>
         <SidebarProvider>
           <AppSidebar />
-          <main className="w-full">
+          <main className="w-full h-screen overflow-hidden">
             <AppHeader />
             {children}
           </main>
