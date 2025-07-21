@@ -1,9 +1,6 @@
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import AppHeader from "@/components/app-header";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -18,13 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fontSans.variable} font-sans antialiased`}>
-        <SidebarProvider>
-          <AppSidebar />
-          <main className="w-full h-screen overflow-hidden">
-            <AppHeader />
-            {children}
-          </main>
-        </SidebarProvider>
+        <main className="w-full h-screen overflow-hidden">{children}</main>
       </body>
     </html>
   );
