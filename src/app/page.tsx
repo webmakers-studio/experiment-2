@@ -23,7 +23,7 @@ export default function Page() {
       <div className="w-full overflow-hidden relative py-2">
         {/* Left Blur */}
         <div className="w-10 h-full bg-gradient-to-r from-white to-transparent absolute left-0 top-0 z-50 -translate-x-2"></div>
-        <div className="flex w-full items-center gap-8 overflow-x-auto scrollbar-hide px-6">
+        <div className="flex w-full items-center gap-8 overflow-x-auto scrollbar-hide px-2">
           {categories.map((category) => (
             <button
               key={category.name}
@@ -56,13 +56,11 @@ export default function Page() {
         <div className="w-10 h-full bg-gradient-to-l from-white to-transparent absolute right-0 top-0"></div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-6">
-          {listings.map((listing) => (
-            <PropertyCard key={listing.id} listing={listing} />
-          ))}
-        </div>
-      </main>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-6 py-4">
+        {listings.map((listing) => (
+          <PropertyCard key={listing.id} listing={listing} />
+        ))}
+      </div>
     </>
   );
 }

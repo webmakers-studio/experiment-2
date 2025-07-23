@@ -1,7 +1,6 @@
 "use client";
 
 import { listings } from "@/data/listings";
-import Header from "@/components/Header";
 import {
   Heart,
   Star,
@@ -9,20 +8,17 @@ import {
   MapPin,
   Users,
   Home,
-  Bath,
-  Bed,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, use } from "react";
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function ListingPage({ params }: Props) {
@@ -32,7 +28,8 @@ export default function ListingPage({ params }: Props) {
   const [guests, setGuests] = useState(1);
   const [showAllPhotos, setShowAllPhotos] = useState(false);
 
-  const listing = listings.find((l) => l.id === params.id);
+  const resolvedParams = use(params);
+  const listing = listings.find((l) => l.id === resolvedParams.id);
 
   if (!listing) {
     notFound();
