@@ -52,7 +52,7 @@ export default function ListingHeader({
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
     >
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex items-start flex-col gap-4 md:flex-row justify-between mb-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
